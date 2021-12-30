@@ -1,0 +1,144 @@
+/* .container {
+    display: flex;
+    margin-top: 10px;
+} */
+
+.movie {
+    flex: 4;
+    /* padding: 10px; */
+}
+
+.movieTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.movieTitle {
+    margin-left: 20px;
+}
+
+.movieTop {
+    display: flex;
+}
+
+.movieTopLeft, .movieTopRight {
+    flex: 1;
+}
+
+.movieTopRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.movieInfoImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.movieInfoTop {
+    display: flex;
+    align-items: center;
+}
+
+.movieInfoName {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.movieInfoBottom {
+    margin-top: 20px;    
+}
+
+.movieInfoItem {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.movieInfoKey {
+    margin-right: 20px;
+}
+
+.movieInfoValue {
+    font-weight: 400;
+}
+
+.movieBottom {
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.movieForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.movieFormLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.movieFormLeft > label {
+    margin-bottom: 10px;
+    color: gray;
+}
+
+.movieFormLeft > input {
+    margin-bottom: 10px;
+    border: none;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.movieFormLeft > select {
+    margin-bottom: 10px;
+}
+
+.movieUploadImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.movieFormRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.movieUpload {
+    display: flex;
+    align-items: center;
+}
+
+.movieIcon {
+    cursor: pointer;
+}
+
+.addMovieButton {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: darkblue;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.addMovieButton.progressing {
+    background-color: teal;
+    cursor: not-allowed;
+}

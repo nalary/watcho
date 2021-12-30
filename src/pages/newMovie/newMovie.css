@@ -1,0 +1,109 @@
+.newMovie {
+    flex: 4;
+    /* padding: 20px; */
+}
+
+.addMovieTitle {
+    margin-left: 20px;
+}
+
+.addMovieForm {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.addMovieItem {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.addMovieItem > label {
+    color: gray;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.addMovieImages {
+    display: flex;
+    align-items: center;
+    /* margin: 20px 0; */
+}
+
+.addMovieIcon {
+    cursor: pointer;
+}
+
+.addMovieMainImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.addMovieThumbImg {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.addMovieItem > input {
+    height: 20px;
+    padding: 10px;    
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.addMovieItem > .addMovieFile {
+    border: none;
+    padding: 10px 0;
+}
+
+.addMovieItem.desc {
+    width: 520px;
+    margin-right: 20px;
+}
+
+.addMovieItem > textarea {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.addMovieItem > select {
+    padding: 10px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.addMovieItem #trailer, .addMovieItem #video {
+    border: none;
+}
+
+.addMovieButton {
+    width: 250px;
+    margin: 40px 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkblue;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    justify-self: end;
+}
+
+.addMovieButton.progressing {
+    background-color: teal;
+    cursor: not-allowed;
+}

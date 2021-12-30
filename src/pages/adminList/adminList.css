@@ -1,0 +1,110 @@
+.adminList {
+    flex: 4;
+    /* padding: 20px; */
+}
+
+.listTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adminListTitle {
+    margin-left: 20px;
+}
+
+.listTop {
+    display: flex;
+}
+
+.listTopLeft, .listTopRight {
+    flex: 1;
+}
+
+.listTopRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.listInfoTop {
+    display: flex;
+    align-items: center;
+}
+
+.listInfoName {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.listInfoBottom {
+    margin-top: 20px;    
+}
+
+/* .listInfoItem {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.listInfoKey {
+    margin-right: 10px;
+}
+
+.listInfoValue {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.listBottom {
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.listForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listFormLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.listFormLeft > label {
+    margin-bottom: 10px;
+    color: gray;
+}
+
+.listFormLeft > input {
+    margin-bottom: 10px;
+    border: none;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.listFormLeft > select {
+    margin-bottom: 10px;
+}
+
+.listFormRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.listButton {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: darkblue;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
