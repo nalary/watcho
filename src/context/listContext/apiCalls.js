@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getLists = async (dispatch) => {
     dispatch(getListsStart());
     try {
-        const res = await axios.get("/lists", {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/lists`, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -21,7 +21,7 @@ export const getLists = async (dispatch) => {
 export const createList = async (list, dispatch) => {
     dispatch(createListStart());
     try {
-        const res = await axios.post("/lists", list, {
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/lists`, list, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -37,7 +37,7 @@ export const createList = async (list, dispatch) => {
 export const updateList = async (list, dispatch) => {
     dispatch(updateListStart());
     try {
-        const res = await axios.put("/lists/" + list._id, list, {
+        const res = await axios.put(`${process.env.REACT_APP_API_URL}/lists/` + list._id, list, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -53,7 +53,7 @@ export const updateList = async (list, dispatch) => {
 export const deleteList = async (listId, dispatch) => {
     dispatch(deleteListStart());
     try {
-        await axios.delete("/lists/" + listId, {
+        await axios.delete(`${process.env.REACT_APP_API_URL}/lists/` + listId, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },

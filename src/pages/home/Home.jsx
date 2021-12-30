@@ -13,7 +13,7 @@ const Home = ({type}) => {
     useEffect(() => {
         const getRandomList = async () => {
             try {
-                const res = await axios.get(`/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`, {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`, {
                         headers: { 
                             token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                         },

@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getUsers = async (dispatch) => {
     dispatch(getUsersStart());
     try {
-        const res = await axios.get("/users", {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -37,7 +37,7 @@ export const getUsers = async (dispatch) => {
 export const updateUser = async (user, dispatch) => {
     dispatch(updateUserStart());
     try {
-        const res = await axios.put("/users/" + user._id, user, {
+        const res = await axios.put(`${process.env.REACT_APP_API_URL}/users/` + user._id, user, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -53,7 +53,7 @@ export const updateUser = async (user, dispatch) => {
 export const deleteUser = async (userId, dispatch) => {
     dispatch(deleteUserStart());
     try {
-        await axios.delete("/users/" + userId, {
+        await axios.delete(`${process.env.REACT_APP_API_URL}/users/` + userId, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },

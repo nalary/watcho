@@ -11,7 +11,7 @@ const ListItem = ({ item, index }) => {
     useEffect(() => {
         const getMovie = async () => {
             try{
-                const res = await axios.get("/movies/find/" + item, {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/movies/find/` + item, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },

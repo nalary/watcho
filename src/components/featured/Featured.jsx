@@ -11,7 +11,7 @@ const Featured = ({ type, setGenre }) => {
     useEffect(() => {
         const getRandomContent = async () => {
             try {
-                const res = await axios.get("/movies/random?type=" + type, {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/movies/random?type=` + type, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },
@@ -27,7 +27,7 @@ const Featured = ({ type, setGenre }) => {
     useEffect(() => {
         const getAllGenres = async () => {
             try {
-                const res = await axios.get("/movies/genres?type=list", {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/movies/genres?type=list`, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },

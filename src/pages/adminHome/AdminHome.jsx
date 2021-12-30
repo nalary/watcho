@@ -21,7 +21,7 @@ const Home = () => {
     useEffect(() => {
         const getStats = async () => {
             try {
-                const res = await axios.get("/users/stats", {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/users/stats`, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },
