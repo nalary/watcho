@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { axiosInstance } from "../../config";
 import "./register.scss";
 
@@ -32,9 +32,11 @@ const Register = () => {
             <div className="top">
                 <div className="wrapper">
                     <div className="logo">:WATCHO</div>
-                    <button className="loginButton">Sign In</button>
-                </div>                
-            </div>
+                    <Link to="/login" className="link">
+                        <button className="loginButton">Sign In</button>
+                    </Link>
+                </div>         
+            </div>            
             <div className="container">
                 <h1>Unlimited movies, TV shows and more.</h1>
                 <h2>Watch anywhere. Cancel anytime.</h2>
