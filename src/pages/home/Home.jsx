@@ -3,7 +3,7 @@ import Navbar from "../../components/navbar/Navbar";
 import List from "../../components/list/List";
 import "./home.scss";
 import { useEffect, useState } from "react";
-import axios from 'axios';
+import { axiosInstance } from "../../config";
 import Footer from "../../components/footer/Footer";
 
 const Home = ({type}) => {
@@ -13,7 +13,7 @@ const Home = ({type}) => {
     useEffect(() => {
         const getRandomList = async () => {
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`, {
+                const res = await axiosInstance.get(`/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`, {
                         headers: { 
                             token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                         },

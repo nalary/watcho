@@ -1,7 +1,7 @@
 import { Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined } from "@material-ui/icons";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { axiosInstance } from "../../config";
 import "./listItem.scss";
 
 const ListItem = ({ item, index }) => {
@@ -11,7 +11,7 @@ const ListItem = ({ item, index }) => {
     useEffect(() => {
         const getMovie = async () => {
             try{
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/movies/find/` + item, {
+                const res = await axiosInstance.get(`/movies/find/` + item, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },

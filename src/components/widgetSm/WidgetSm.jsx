@@ -1,7 +1,7 @@
 import { Visibility } from "@material-ui/icons";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { axiosInstance } from "../../config";
 import "./widgetSm.css";
 
 const WidgetSm = () => {
@@ -10,7 +10,7 @@ const WidgetSm = () => {
     useEffect(() => {
         const getNewUsers = async () => {
             try{
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/users?new=true`, {
+                const res = await axiosInstance.get(`/users?new=true`, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },

@@ -1,11 +1,11 @@
 import { createMovieFailure, createMovieStart, createMovieSuccess, deleteMovieFailure, deleteMovieStart, deleteMovieSuccess, getMoviesFailure, getMoviesStart, getMoviesSuccess, updateMovieFailure, updateMovieStart, updateMovieSuccess } from "./MovieActions";
-import axios from 'axios';
+import { axiosInstance } from "../../config";
 
 // get movies
 export const getMovies = async (dispatch) => {
     dispatch(getMoviesStart());
     try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/movies`, {
+        const res = await axiosInstance.get(`/movies`, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -21,7 +21,7 @@ export const getMovies = async (dispatch) => {
 export const createMovie = async (movie, dispatch) => {
     dispatch(createMovieStart());
     try {
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}/movies`, movie, {
+        const res = await axiosInstance.post(`/movies`, movie, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -37,7 +37,7 @@ export const createMovie = async (movie, dispatch) => {
 export const updateMovie = async (movie, dispatch) => {
     dispatch(updateMovieStart());
     try {
-        const res = await axios.put(`${process.env.REACT_APP_API_URL}/movies/` + movie._id, movie, {
+        const res = await axiosInstance.put(`/movies/` + movie._id, movie, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -53,7 +53,7 @@ export const updateMovie = async (movie, dispatch) => {
 export const deleteMovie = async (movieId, dispatch) => {
     dispatch(deleteMovieStart());
     try {
-        await axios.delete(`${process.env.REACT_APP_API_URL}/movies/` + movieId, {
+        await axiosInstance.delete(`/movies/` + movieId, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },

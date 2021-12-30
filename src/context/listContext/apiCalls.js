@@ -1,11 +1,11 @@
 import { createListFailure, createListStart, createListSuccess, deleteListFailure, deleteListStart, deleteListSuccess, getListsFailure, getListsStart, getListsSuccess, updateListFailure, updateListStart, updateListSuccess } from "./ListActions";
-import axios from 'axios';
+import { axiosInstance } from "../../config";
 
 // get lists
 export const getLists = async (dispatch) => {
     dispatch(getListsStart());
     try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/lists`, {
+        const res = await axiosInstance.get(`/lists`, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -21,7 +21,7 @@ export const getLists = async (dispatch) => {
 export const createList = async (list, dispatch) => {
     dispatch(createListStart());
     try {
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}/lists`, list, {
+        const res = await axiosInstance.post(`/lists`, list, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -37,7 +37,7 @@ export const createList = async (list, dispatch) => {
 export const updateList = async (list, dispatch) => {
     dispatch(updateListStart());
     try {
-        const res = await axios.put(`${process.env.REACT_APP_API_URL}/lists/` + list._id, list, {
+        const res = await axiosInstance.put(`/lists/` + list._id, list, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },
@@ -53,7 +53,7 @@ export const updateList = async (list, dispatch) => {
 export const deleteList = async (listId, dispatch) => {
     dispatch(deleteListStart());
     try {
-        await axios.delete(`${process.env.REACT_APP_API_URL}/lists/` + listId, {
+        await axiosInstance.delete(`/lists/` + listId, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
             },

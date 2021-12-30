@@ -1,7 +1,7 @@
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { axiosInstance } from "../../config";
 import "./featured.scss";
 
 const Featured = ({ type, setGenre }) => {
@@ -11,7 +11,7 @@ const Featured = ({ type, setGenre }) => {
     useEffect(() => {
         const getRandomContent = async () => {
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/movies/random?type=` + type, {
+                const res = await axiosInstance.get(`/movies/random?type=` + type, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },
@@ -27,7 +27,7 @@ const Featured = ({ type, setGenre }) => {
     useEffect(() => {
         const getAllGenres = async () => {
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/movies/genres?type=list`, {
+                const res = await axiosInstance.get(`/movies/genres?type=list`, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },

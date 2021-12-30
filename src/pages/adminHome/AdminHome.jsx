@@ -4,9 +4,9 @@ import "./adminHome.css";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useEffect, useMemo, useState } from "react";
-import axios from 'axios';
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+import { axiosInstance } from "../../config";
 
 const Home = () => {
     const MONTHS = useMemo(() => 
@@ -21,7 +21,7 @@ const Home = () => {
     useEffect(() => {
         const getStats = async () => {
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/users/stats`, {
+                const res = await axiosInstance.get(`/users/stats`, {
                     headers: { 
                         token: "Bearer " + JSON.parse(localStorage.getItem("cineUser")).accessToken
                     },
